@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://ww.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" th:href="@{/css/log.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="img">
+			<img th:src="@{/images/bg.svg}" />
+		</div>
+		<div class="login-content">
+			 <form method="POST" action="/login" th:object:"${loginForm}">
+				<img th:src="@{/images/avatar.svg}" />
+				<h2 class="title">Welcome</h2>
+				<div class="input-div one">
+					<div class="div">
+ 						<input name="name" type="email" placeholder="Enter email" class="input" >
+ 					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="div">
+  						 <input name="password" type="password" class="input" placeholder="Enter password"/>
+					</div>
+				</div>
+				<a href="/changepassword">Forgot Password?</a>
+				<input type="submit" class="btn" value="Login" (click)="login()">
+			</form>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

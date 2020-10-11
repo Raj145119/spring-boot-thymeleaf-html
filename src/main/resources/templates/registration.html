@@ -1,0 +1,39 @@
+<html xmlns:th="http://ww.thymeleaf.org">
+<head>
+<title>Registration</title>
+<meta charset="ISO-8859-1">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" th:href="@{/css/registration.css}" />
+</head>
+<body>
+	<div class="login-content">
+			 <form method="POST" action="/registration" th:object:"${regForm}">
+				<img th:src="@{/images/avatar.svg}" />
+				<h2 class="title">Welcome in Guest Book</h2>
+				<div class="input-div one">
+					<div class="div">
+					
+ 						<input name="name" type="text" placeholder="Enter  Name" class="input" >
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="div">
+   						<input name="email" type="email" class="input" placeholder="Enter  email"/>
+					</div>
+				</div>	<div class="input-div pass">
+					<div class="div">
+   						<input name="password" type="password" class="input" placeholder="Enter Password"/>
+					</div>
+				</div>
+					<div class="input-div pass">
+					<div class="div">
+   						<input name="mobileNo" type="number" class="input" placeholder="Enter mobile number"/>
+					</div>
+				</div>
+					
+				<a href="/changepassword">Forgot Password?</a>
+				<input type="submit" class="btn" value="Login" (click)="login()">
+			</form>
+		</div>
+</body>
+</html>
